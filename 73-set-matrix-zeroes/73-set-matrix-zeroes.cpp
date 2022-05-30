@@ -11,20 +11,10 @@ public:
                 }
             }
         }
-        vector<int> zeros(matrix[0].size(),0);
-        // for(auto x:row){
-        //     matrix[x] = zeros;
-        // }
+        // vector<int> zeros(matrix[0].size(),0);
         for(int i = 0;i<matrix.size();i++){
             for(int j = 0;j<matrix[0].size();j++){
-                if(col.find(j) != col.end()){
-                    matrix[i][j] = 0;
-                    
-                }
-                if(row.find(i) != row.end()){
-                    matrix[i] = zeros;
-                    
-                }
+                if(row.count(i) || col.count(j))matrix[i][j]=0; 
                 
             }
         }
