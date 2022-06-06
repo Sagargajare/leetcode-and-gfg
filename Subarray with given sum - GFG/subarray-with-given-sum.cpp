@@ -10,28 +10,22 @@ class Solution
     //Function to find a continuous sub-array which adds up to a given number.
     vector<int> subarraySum(int arr[], int n, long long s)
     {
-        int sum;
-         for(int i=0 ; i<n ;i++)
-         {
-             sum=0;
-             for(int j=i ; j<n ; j++)
-             {
-                 sum=sum+arr[j];
-                 if(sum==s)
-                 {
-                     return {i+1,j+1};
-                 }
-                 else
-                 {
-                     if(sum>s)
-                     {
-                         break;
-                     }
-                 }
-                 
-             }
-         }
-     return {-1};
+        int sum = 0;
+        for(int i = 0;i<n;i++){
+            sum = 0;
+            for(int j = i;j<n;j++){
+                sum+=arr[j];
+                if(sum==s){
+                    return {i+1,j+1};
+                }else{
+                    if(sum>s){
+                        break;
+                    }
+                }
+            }
+            
+        }
+        return {-1};
     }
 };
 
