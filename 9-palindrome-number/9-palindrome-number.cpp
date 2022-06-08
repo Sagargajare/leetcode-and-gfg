@@ -1,16 +1,16 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if(x<0){
-            return false;
-        }
-        string st = to_string(x);
-        string sbc = st;
-        reverse(st.begin(),st.end());
+        string num = to_string(x);
         
-        if(st == sbc){
-            return true;
+        int len = num.length();
+        int halfLen = len / 2;
+        
+        for(int i = 0; i < halfLen; i++) {
+            if(num[i] != num[len - i - 1])
+                return false;
         }
-        return false;
+        
+        return true;
     }
 };
